@@ -1,10 +1,15 @@
 # 🌦️ Weather App
 
 A simple and responsive Weather App that fetches real-time weather data using the OpenWeatherMap API. It allows users to search for any city and view current weather conditions, including temperature, humidity, wind speed, and more.
----
+
+
+
 
 
 **Visit** : [arda-30-weather-app](https://arda-30-weather-app.vercel.app/)
+
+
+Feel free to check out ↗️
 
 ##  Features
 
