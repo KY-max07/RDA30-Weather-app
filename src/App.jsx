@@ -75,11 +75,11 @@ getCloudEmoji(weatherData?.current.cloud);}, [weatherData]);
      
       <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 bg-black">
       <div className="flex flex-col items-center justify-center h-full w-full">
-        <div className="bg-white/10 backdrop-blur-md rounded-md p-4 flex gap-5 items-center px-6">
+        <div className="bg-white/10 backdrop-blur-md rounded-md p-4 flex gap-5 items-center px-6  ">
           <input
             type="text"
             placeholder="Enter city name"
-            className="border border-gray-300 rounded-full p-2 focus:outline-none text-2xl px-4 pl-10  w-[35vw]"
+            className="border border-gray-300 rounded-full p-2 focus:outline-none md:text-2xl md:px-4 md:pl-10  w-full md:w-[35vw]"
             onChange={(e) => setInputValue(e.target.value)}
             value={inputValue}
             onKeyDown={HandleLocation}
@@ -92,7 +92,7 @@ getCloudEmoji(weatherData?.current.cloud);}, [weatherData]);
           </div>
         </div>
 
-        <div className="bg-neutral-900 backdrop-blur-md rounded-md p-3 mt-5 flex gap-5  h-[100vw] w-[45vw]">
+        <div className="bg-neutral-900 backdrop-blur-md rounded-md p-3 mt-5 flex gap-5  h-11/12 w-11/12 md:h-[100vh] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] 2xl:w-[40vw] relative">
           {loading ? (
             <div >loading...</div>
           ) : (
@@ -102,27 +102,27 @@ getCloudEmoji(weatherData?.current.cloud);}, [weatherData]);
               ) : (
                 <div className="w-full  relative">
                   <div className="flex flex-col items-center gap-3 w-full ">
-                    <p className="text-5xl">{svg}</p>
-                    <p className="text-5xl doto">{weatherData?.current.temp_c}°C</p>
+                    <p className="text-5xl absolute top-0 right-15 lg:right-50">{svg}</p>
+                    <p className="text-2xl md:text-5xl doto">{weatherData?.current.temp_c}°C</p>
                     <p>{weatherData?.current.condition.text}</p>
-                    <h1 className="text-5xl doto">{weatherData?.location.name}, {weatherData?.location.region}</h1>
+                    <h1 className=" text-xl md:text-5xl doto">{weatherData?.location.name}, {weatherData?.location.region}</h1>
                   </div>
                   <div className="grid grid-cols-2 gap-6 mt-15  h-1/2 place-items-center-safe">
                     <div className="flex flex-col items-center justify-center">
                       <Wind className="h-20 w-20 text-blue-400/40"/>
-                    <p className="text-2xl mt-5 doto">Wind: {weatherData?.current.wind_kph} km/h</p>
+                    <p className="text-sm md:text-2xl mt-5 doto">Wind: {weatherData?.current.wind_kph} km/h</p>
                     </div>
-                    <div className="flex flex-col items-center justify-center">
+                    <div className="flex flex-col items-center justify-center gap-6">
                     <ThermometerSun className="h-20 w-20 text-blue-400/40"/>
-                    <p className="text-2xl doto">Humidity: {weatherData?.current.humidity}%</p>
+                    <p className="text-sm md:text-2xl doto">Humidity: {weatherData?.current.humidity}%</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                     <Cloudy  className="h-20 w-20 text-blue-400/40"/>
-                    <p className="text-2xl doto">Cloud Cover: {weatherData?.current.cloud}%</p>
+                    <p className="text-sm md:text-2xl doto">Cloud Cover: {weatherData?.current.cloud}%</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                     <Gauge className="h-20 w-20 text-blue-400/40"/>
-                    <p className="text-2xl doto">Pressure: {weatherData?.current.pressure_in}in</p>
+                    <p className="text-sm md:text-2xl doto">Pressure: {weatherData?.current.pressure_in}in</p>
                     </div>
 
                     
